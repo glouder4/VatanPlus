@@ -1,0 +1,44 @@
+<footer class="col-12">
+	<div class="container">
+		<div class="row m-0">
+			<div class="col-12 col-lg-3 text-center text-md-left">
+				<img src="assets/components/templates/images/footer_logo.png" alt="Ватан плюс">
+			</div>
+			<div class="col order-2 order-md-2 text-center text-md-left">
+				<div class="row m-0">
+					[[pdoMenu?
+						&parents=`0`
+						&level=`1`
+						&resources=``
+						&firstClass=`0`
+						&lastClass=`0`
+						&tplOuter=`@INLINE <ul id="footer-navigation" class="row col-12 col-md-8">
+												[[+wrapper]]
+											</ul>`
+						&tpl=`@INLINE <li [[+classes]]><a href="[[+link]]" [[+attributes]]>[[+menutitle]]</a>[[+wrapper]]</li>`
+						&hereClass=`active`
+						&rowClass=`nav-item col-6`
+					]]
+					<ul class="col-12 col-md-4">
+						<li class="nav-item"><a href="#">Статьи</a></li>
+						<li class="nav-item"><a href="#">Вакансии</a></li>
+						<li class="nav-item"><a href="#">Лицензии и сертификаты</a></li>
+						<li class="nav-item"><a href="#">Контакты</a></li>
+					</ul>
+				</div>			
+			</div>
+			<div class="col-12 col-lg-3 order-2 order-md-3 text-center text-md-left">
+		        <div class="col-12 text-center text-md-left"><i class="fas fa-map-marker-alt"></i> г.Уфа, ул. Комарова д.8</div>
+		        <div class="col-12 text-center text-md-left"><a href="mailtto:mail@mail.ru"><i class="far fa-envelope"></i> mail@mail.ru</a></div>
+		        <div class="col-12 text-center text-md-left" id="phone"><a href="tel:+73475121985"><i class="fas fa-phone-alt"></i> +7(347)512-19-85</a></div>
+		        <div class="col-12 ">
+		          <a href="#">
+		            <div id="send-mail-footer">
+		              <span>Написать письмо</span>
+		            </div>
+		          </a>
+		        </div>
+			</div>
+		</div>
+	</div>	
+</footer>

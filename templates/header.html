@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="navbar-brand col-lg-4">
+  <div class="navbar-brand col-lg-4 order-1">
     <div class="row m-0">
       <div class="col-12 col-md-3 col-lg-5">
         <a href="#">
@@ -11,11 +11,11 @@
       </div> 
     </div>       
   </div>    
-  <div class="col">
+  <div class="col order-2">
     <div id="contact-block">
       <div class="row m-0">
-        <div class="col-7 col-md-3 text-center text-md-left"><i class="fas fa-map-marker-alt"></i> г.Уфа, ул. Комарова д.8</div>
-        <div class="col-5 col-md-3 text-center text-md-left"><a href="mailtto:mail@mail.ru"><i class="far fa-envelope"></i> mail@mail.ru</a></div>
+        <div class="col-12 col-sm-7 col-md-3 text-center text-md-left"><i class="fas fa-map-marker-alt"></i> г.Уфа, ул. Комарова д.8</div>
+        <div class="col-12 col-sm-5 col-md-3 text-center text-md-left"><a href="mailtto:mail@mail.ru"><i class="far fa-envelope"></i> mail@mail.ru</a></div>
         <div class="col-12 col-md-3 text-center text-md-left" id="phone"><a href="tel:+73475121985"><i class="fas fa-phone-alt"></i> +7(347)512-19-85</a></div>
         <div class="col-12 col-md-3">
           <a href="#">
@@ -26,11 +26,28 @@
         </div>
       </div>    
     </div>
-    <div class="col-12" id="menu-button">
+    <div class="col-12 order-3 order-md-4" id="menu-button">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#header-navigation" aria-controls="header-navigation" aria-expanded="false" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button> 
     </div>
-    [[pdoMenu? &parents=`0` &level=`1` &resources=`` &firstClass=`0` &lastClass=`0` &tplOuter=`@INLINE <ul id="header-navigation" class="collapse navbar-collapse navbar-nav mr-auto mt-2 mt-lg-0">[[+wrapper]]</ul>` &hereClass=`active` &rowClass=`nav-item mx-auto` ]]
+    [[pdoMenu?
+      &parents=`0`
+      &level=`2`
+      &outerClass=`navbar-nav`
+      &tplOuter=`@INLINE <ul id="header-navigation" class="collapse navbar-collapse navbar-nav order-4 order-md-3">[[+wrapper]]</ul>`
+      &tpl=`@INLINE <li[[+classes]]><a href="[[+link]]" [[+attributes]] class="nav-link">[[+menutitle]]</a>[[+wrapper]]</li>`
+      &rowClass=`nav-item`
+      &parentClass=`dropdown`
+      &tplParentRow=`@INLINE <li[[+classes]]>
+                              <a href="[[+link]]" [[+attributes]] class="nav-link dropdown-toggle" data-toggle="dropdown">[[+menutitle]]</a>
+                              <ul class="dropdown-menu">                                
+                                <a class="dropdown-item" href="[[+link]]" [[+attributes]] class="nav-link">[[+menutitle]]</a>
+                                <div class="dropdown-divider"></div>
+                                [[+wrapper]]
+                              </ul>
+                            </li>`
+      &tplInner=`@INLINE [[+wrapper]]`
+      ]]
   </div>     
 </nav>
