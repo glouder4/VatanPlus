@@ -1,0 +1,54 @@
+<div id="licenses">
+	<h3>Свидетельства, Лицензии и Сертификаты</h3>
+	<div id="licensesSlider" class="carousel slide" data-ride="carousel">
+	  <div class="carousel-inner">
+	  </div>
+	  <a class="carousel-control-prev" href="#licensesSlider" role="button" data-slide="prev">
+	    <i class="fas fa-arrow-left"></i>
+	  </a>
+	  <a class="carousel-control-next" href="#licensesSlider" role="button" data-slide="next">
+	    <i class="fas fa-arrow-right"></i>
+	  </a>
+	</div>
+	<div id="slide-container">
+		[[!pdoResources?
+			&useWeblinkUrl=`1`
+            &parents=`17`
+            &ajaxMode=`button`
+            &limit=`0`
+            &tpl=`@INLINE <a class="license" href="[[+link]]">
+            				<div class="col-12 p-0">
+            					<div class="row m-0">
+		            				<div class="col-12 p-0">
+		            					<img itemprop="image" src="[[+tv.image]]" alt="Лицензия">
+		            				</div>
+		            				<div class="col text-center">
+		            					<p>
+		            						[[+pagetitle]]
+		            					</p>
+		            				</div>
+		            			</div>
+            				</div>			            			
+	            		</a>`
+            &includeTVs=`image`
+        ]]
+	</div>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			let licensesSlides = 0; let licensescount = 0; $('#licensesSlider>.carousel-inner')[0].innerHTML += '<div class="carousel-item active"><div class="row m-0"></div></div>';
+			let slideElement = $('#licensesSlider>.carousel-inner>.carousel-item>.row')[licensesSlides];
+			for(let i=0 ; i < $('#slide-container>.license').length;i++){
+				slideElement = $('#licensesSlider>.carousel-inner>.carousel-item>.row')[licensesSlides];
+				let slideItem = $('#slide-container>.license')[i].innerHTML;
+				$(slideElement)[0].innerHTML += '<div class="col-6 col-md-3"><div class="col-11 p-0">'+slideItem+'</div></div>';
+				licensescount++;
+				if((licensescount == 4)&&($('#slide-container>.license').length>4)){
+					$('#licensesSlider>.carousel-inner')[0].innerHTML += '<div class="carousel-item"><div class="row m-0"></div></div>';
+					licensesSlides++;
+					licensescount = 0;
+				}
+			}
+			$('#slide-container')[0].remove();
+		})
+	</script>
+</div>

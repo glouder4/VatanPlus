@@ -1,0 +1,36 @@
+<div id="objects">
+	<h3>Объекты</h3>
+	<div class="row m-0">
+		<div class="col-12 col-md-6">
+			[[!pdoResources?
+				&useWeblinkUrl=`1`
+	            &parents=`15`
+	            &ajaxMode=`button`
+	            &limit=`1`
+	            &tpl=`@INLINE <a href="[[+link]]"><img itemprop="image" src="[[+tv.image]]" alt="Последний объект">[[+pagetitle]]</a>`
+	            &includeTVs=`image`
+	        ]]
+		</div>
+		<div class="col">
+			<div class="row m-0">
+				[[!pdoResources?
+					&useWeblinkUrl=`1`
+		            &parents=`12`
+		            &ajaxMode=`button`
+		            &limit=`4`
+		            &tpl=`@INLINE <a class="col-12 col-sm-6 p-0" href="[[+link]]">
+		            				<div class="news col-12">
+		            					<div class="col">
+			            					<span>[[+tv.date]]</span>
+			            					<p>
+			            						[[+description]]
+			            					</p>
+			            				</div>
+		            				</div>			            			
+			            		</a>`
+		            &includeTVs=`date`
+		        ]]
+		    </div>
+		</div>
+	</div>
+</div>

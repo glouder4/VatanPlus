@@ -1,0 +1,49 @@
+<div id="mainPageSlider" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row m-0">
+        <div class="col-12 col-lg-7 col-xl-6 p-0">
+          <h2>Системы газораспределения<br>и газопотребления</h2>
+          <div class="col-12 col-md-10">
+            <p>Спустя 22 года на рынке технической диагностики и экспертизы промышленной безопасности мы остаемся новаторами в сфере неразрушающего контроля</p>
+          </div>          
+        </div>
+        <div class="col-12 col-lg-5 col-xl-6">
+          <img class="d-block w-100" src="assets/components/templates/images/first_slide.png" alt="Первый слайд">
+        </div>
+      </div>            
+    </div>
+    <div class="carousel-item">
+      <div class="row m-0">
+        <div class="col-12 col-lg-7 col-xl-6 p-0">
+          <h2>Системы газораспределения<br>и газопотребления</h2>
+          <div class="col-12 col-md-10">
+            <p>Спустя 22 года на рынке технической диагностики и экспертизы промышленной безопасности мы остаемся новаторами в сфере неразрушающего контроля</p>
+          </div>          
+        </div>
+        <div class="col-12 col-lg-5 col-xl-6">
+          <img class="d-block w-100" src="assets/components/templates/images/first_slide.png" alt="Первый слайд">
+        </div>
+      </div>            
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#mainPageSlider" role="button" data-slide="prev">
+    <i class="fas fa-arrow-left"></i>
+  </a>
+  <a class="carousel-control-next" href="#mainPageSlider" role="button" data-slide="next">
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <span id="slider-counts"></span>
+</div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    let countOfSlides = $('#mainPageSlider .carousel-item').length;
+    if(countOfSlides >= 10) $('#slider-counts')[0].innerHTML = '<span>01</span>/'+countOfSlides;
+    else $('#slider-counts')[0].innerHTML = '<span>01</span>/0'+countOfSlides;
+    $('#mainPageSlider').on('slide.bs.carousel', function (response) {
+      let count = response.to+1;
+      if(count >= 10)$('#slider-counts>span')[0].innerText = count;
+      else $('#slider-counts>span')[0].innerText = '0'+count;
+    })
+  })
+</script>
